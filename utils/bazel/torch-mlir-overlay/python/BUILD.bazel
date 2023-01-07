@@ -105,7 +105,7 @@ genrule(
         "torch_mlir/csrc/base_lazy_backend/generated/shape_inference.cpp",
         "torch_mlir/csrc/base_lazy_backend/generated/shape_inference.h",
     ],
-    cmd = "$(locations @torch-mlir//:autogen_ltc_backend) --binary_dir=. && cp -r python/torch_mlir/csrc/base_lazy_backend/generated/* $(@D)/torch_mlir/csrc/base_lazy_backend/generated",
+    cmd = "$(locations @torch-mlir//:autogen_ltc_backend) --binary_dir=. --build_platform=BAZEL && cp -r python/torch_mlir/csrc/base_lazy_backend/generated/* $(@D)/torch_mlir/csrc/base_lazy_backend/generated",
     tags = ["no-sandbox"],
     tools = ["@torch-mlir//:autogen_ltc_backend"],
     visibility = ["//visibility:public"],
