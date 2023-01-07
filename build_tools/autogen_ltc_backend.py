@@ -465,7 +465,7 @@ class GenTorchMlirLTC:
             dry_run=False,
             impl_path=str(self.backend_path.joinpath("mlir_native_functions.cpp")),
             node_base="torch::lazy::TorchMlirNode",
-            node_base_hdr=str(self.backend_path.joinpath("mlir_node.h")),
+            node_base_hdr=str(self.generated_path.parents[0].joinpath("mlir_node.h")),
             tensor_class=self.tensor_class,
             tensor_class_hdr="torch/csrc/lazy/core/tensor.h",
             shape_inference_hdr=str(self.generated_path.joinpath("shape_inference.h")),
